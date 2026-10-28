@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #070b14;
+    --bg-secondary: #0f172a;
+    --bg-card: rgba(15, 23, 42, 0.75);
+    --border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  html.light {
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --bg-card: rgba(255, 255, 255, 0.9);
+    --border-color: rgba(0, 0, 0, 0.08);
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.6);
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.light .glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.glass-card {
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.light .glass-card {
+  background: rgba(241, 245, 249, 0.75);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Visible focus outlines for keyboard navigation (WCAG 2.4.7) */
+:focus-visible {
+  outline: 2px solid #3b82f6 !important;
+  outline-offset: 2px !important;
+}
+
+/* Respect user preferences for reduced motion (WCAG 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High-contrast, clean light mode overrides */
+html.light,
+html.light body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+html.light header,
+html.light aside,
+html.light main,
+html.light footer,
+html.light nav {
+  background-color: #ffffff;
+  border-color: #e2e8f0;
+}
+
+html.light .bg-slate-950,
+html.light .bg-slate-950\/90,
+html.light .bg-slate-950\/80,
+html.light .bg-slate-950\/70,
+html.light .bg-slate-950\/60,
+html.light .bg-slate-950\/50,
+html.light .bg-slate-950\/40,
+html.light .bg-slate-950\/30,
+html.light .bg-slate-900,
+html.light .bg-slate-900\/90,
+html.light .bg-slate-900\/80,
+html.light .bg-slate-900\/60,
+html.light .bg-slate-900\/40 {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+html.light .bg-slate-800,
+html.light .bg-slate-800\/80,
+html.light .bg-slate-800\/60 {
+  background-color: #f1f5f9 !important;
+  color: #1e293b !important;
+}
+
+html.light .border-slate-800,
+html.light .border-slate-800\/80,
+html.light .border-slate-700 {
+  border-color: #e2e8f0 !important;
+}
+
+html.light .text-slate-100,
+html.light .text-slate-200,
+html.light .text-slate-300 {
+  color: #0f172a !important;
+}
+
+html.light .text-slate-400 {
+  color: #475569 !important;
+}
+
+html.light .text-slate-500 {
+  color: #64748b !important;
+}
